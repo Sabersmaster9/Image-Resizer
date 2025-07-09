@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>图片尺寸调整工具</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>图片尺寸调整工具</h1>
+    <p>本地图片尺寸调整和格式转换，保护您的隐私</p>
+  </header>
+  <main>
+    <section id="upload-area" tabindex="0">
+      <p>拖拽图片到此处，或点击选择文件</p>
+      <input type="file" id="file-input" accept="image/*" style="display:none;">
+      <button id="select-btn">选择文件</button>
+    </section>
+    <section id="editor" style="display:none;">
+      <div id="preview-row">
+        <div id="preview-area">
+          <img id="preview-img" alt="图片预览">
+          <button id="remove-btn" style="display:none;margin-top:1em;">删除图片</button>
+        </div>
+        <div id="result-area">
+          <img id="result-img" alt="修改后图片预览" style="display:none;">
+          <div id="result-label" style="text-align:center;color:#888;margin-top:1em;">修改后图片预览</div>
+        </div>
+      </div>
+      <div id="controls">
+        <label>宽度(px): <input type="number" id="img-width"></label>
+        <label>高度(px): <input type="number" id="img-height"></label>
+        <label><input type="checkbox" id="keep-ratio" checked> 保持宽高比</label>
+        <label>格式:
+          <select id="format">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+            <option value="webp">WebP</option>
+            <option value="svg">SVG</option>
+          </select>
+        </label>
+        <label id="quality-label" style="display:none;">
+          质量: <input type="range" id="quality" min="1" max="100" value="90">
+          <span id="quality-value">90</span>%
+        </label>
+        <button id="reset-btn">重置</button>
+        <button id="export-btn">导出图片</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 图片尺寸调整工具</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
